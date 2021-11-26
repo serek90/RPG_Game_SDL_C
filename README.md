@@ -4,10 +4,10 @@ This is a simple game app for now only for training my C and SDL skills
 
 ### 1. Environment
 
-####System:
+#### System:
 The app was written and tested on the Windows 10 environment
 
-####Compiler and linker:
+#### Compiler and linker:
 Visual Studio Compiler
 
 
