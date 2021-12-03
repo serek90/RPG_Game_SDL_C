@@ -1,14 +1,17 @@
 #include "Game.h"
 #include <iostream>
 
+SDL_Texture* playerText;
+SDL_Rect srcR, destR;
+
 Game::Game()
 {
-	std::cout << "Call constructor!" << std::endl;
+	std::cout << "Call constructor????!" << std::endl;
 }
 
 Game::~Game()
 {
-
+	std::cout << "Call destructor" << std::endl;
 }
 
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
@@ -45,6 +48,9 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		is_Running = false;
 	}
 
+	SDL_Surface* tmpSurface = IMG_Load("graphics/knight.png");
+	playerText = SDL_CreateTextureFromSurface(renderer, tmpSurface);
+	SDL_FreeSurface(tmpSurface);
 }
 
 void Game::handleEvents()
@@ -65,12 +71,25 @@ void Game::handleEvents()
 void Game::update()
 {
 	cnt++;
+	static int var = 0;
+
+	if (cnt == 100)
+	{
+		cnt = 0;
+		var++;
+	}
+	destR.h = 64;
+	destR.w = 64;
+	destR.x = var%200;
+
 }
 
 void Game::render()
 {
 	SDL_RenderClear(renderer);
+	SDL_RenderCopy(renderer, playerText, NULL, &destR);
 	SDL_RenderPresent(renderer);
+
 }
 
 void Game::clean()
@@ -78,7 +97,7 @@ void Game::clean()
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
-	std::cout << "App was destroyed" << std::endl;
+	std::cout << "App was destroyed or not??" << std::endl;
 }
 
 
