@@ -40,8 +40,6 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 			std::cout << "Renderer cretaed" << std::endl;
 		}
 		is_Running = true;
-
-		printf("Dupa");
 	}
 	else
 	{
@@ -71,16 +69,10 @@ void Game::handleEvents()
 void Game::update()
 {
 	cnt++;
-	static int var = 0;
 
-	if (cnt == 100)
-	{
-		cnt = 0;
-		var++;
-	}
 	destR.h = 64;
 	destR.w = 64;
-	destR.x = var%200;
+	destR.x = cnt;
 
 }
 
@@ -89,7 +81,6 @@ void Game::render()
 	SDL_RenderClear(renderer);
 	SDL_RenderCopy(renderer, playerText, NULL, &destR);
 	SDL_RenderPresent(renderer);
-
 }
 
 void Game::clean()
@@ -97,7 +88,6 @@ void Game::clean()
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
-	std::cout << "App was destroyed or not??" << std::endl;
 }
 
 
