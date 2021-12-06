@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "TextureManager.h"
 #include <iostream>
 
 SDL_Texture* playerText;
@@ -46,9 +47,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		is_Running = false;
 	}
 
-	SDL_Surface* tmpSurface = IMG_Load("graphics/knight.png");
-	playerText = SDL_CreateTextureFromSurface(renderer, tmpSurface);
-	SDL_FreeSurface(tmpSurface);
+	playerText = TextureManager::LoadTexture("graphics/knight.png", renderer);
 }
 
 void Game::handleEvents()
@@ -83,7 +82,7 @@ void Game::render()
 	SDL_RenderPresent(renderer);
 }
 
-void Game::clean()
+void Game::clean() // ToDo: Move to destructor
 {
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
