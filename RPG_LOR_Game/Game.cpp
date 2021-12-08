@@ -1,9 +1,11 @@
 #include "Game.h"
 #include "TextureManager.h"
 #include <iostream>
+#include "GameObject.h"
 
-SDL_Texture* playerText;
-SDL_Rect srcR, destR;
+GameObject* player;
+GameObject *enemy_1, *enemy_2;
+
 
 Game::Game()
 {
@@ -47,7 +49,9 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		is_Running = false;
 	}
 
-	playerText = TextureManager::LoadTexture("graphics/knight.png", renderer);
+	player = new GameObject("graphics/knight.png", renderer, 96, 96);
+	enemy_1 = new GameObject("graphics/enemy.png", renderer, 0, 0);
+	enemy_2 = new GameObject("graphics/enemy.png", renderer, 0, 96);
 }
 
 void Game::handleEvents()
@@ -69,16 +73,17 @@ void Game::update()
 {
 	cnt++;
 
-	destR.h = 64;
-	destR.w = 64;
-	destR.x = cnt;
-
+	player->Update();
+	enemy_1->Update();
+	enemy_2->Update();
 }
 
 void Game::render()
 {
 	SDL_RenderClear(renderer);
-	SDL_RenderCopy(renderer, playerText, NULL, &destR);
+	player->Render();
+	enemy_1->Render();
+	enemy_2->Render();
 	SDL_RenderPresent(renderer);
 }
 
