@@ -2,9 +2,14 @@
 #include "TextureManager.h"
 #include <iostream>
 #include "GameObject.h"
+#include "Map.h"
 
 GameObject* player;
 GameObject *enemy_1, *enemy_2;
+Map* map;
+
+
+SDL_Renderer* Game::renderer = nullptr;
 
 
 Game::Game()
@@ -15,6 +20,9 @@ Game::Game()
 Game::~Game()
 {
 	std::cout << "Call destructor" << std::endl;
+	SDL_DestroyWindow(window);
+	SDL_DestroyRenderer(renderer);
+	SDL_Quit();
 }
 
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
@@ -49,9 +57,10 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		is_Running = false;
 	}
 
-	player = new GameObject("graphics/knight.png", renderer, 96, 96);
-	enemy_1 = new GameObject("graphics/enemy.png", renderer, 0, 0);
-	enemy_2 = new GameObject("graphics/enemy.png", renderer, 0, 96);
+	player = new GameObject("graphics/knight.png",  96, 96);
+	enemy_1 = new GameObject("graphics/enemy.png", 0, 0);
+	enemy_2 = new GameObject("graphics/enemy.png", 0, 96);
+	map = new Map();
 }
 
 void Game::handleEvents()
@@ -81,18 +90,13 @@ void Game::update()
 void Game::render()
 {
 	SDL_RenderClear(renderer);
+	map->Draw();
 	player->Render();
 	enemy_1->Render();
 	enemy_2->Render();
 	SDL_RenderPresent(renderer);
 }
 
-void Game::clean() // ToDo: Move to destructor
-{
-	SDL_DestroyWindow(window);
-	SDL_DestroyRenderer(renderer);
-	SDL_Quit();
-}
 
 
 

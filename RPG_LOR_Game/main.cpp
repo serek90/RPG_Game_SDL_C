@@ -12,7 +12,7 @@ int main(int argc, char * argv[])
 
 	Game* game = new Game;
 
-	game->init("Knight's game", 100, 100, 600, 600, false);
+	game->init("Knight's game", 100, 100, 1200, 800, false);
 
 	while (game->running())
 	{
@@ -29,7 +29,6 @@ int main(int argc, char * argv[])
 			SDL_Delay(frameDelay - frameTime);
 		}
 	}
-	game->clean();
 
 	delete game;
 

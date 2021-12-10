@@ -15,14 +15,14 @@ public:
 	void handleEvents();
 	void update();
 	void render();
-	void clean();
 
 	bool running() { return is_Running; }
+
+	static SDL_Renderer *renderer;
 
 private:
 	int cnt = 0;
 	bool is_Running;
-	SDL_Renderer *renderer;
 	SDL_Window *window;
 };
 
