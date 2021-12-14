@@ -4,9 +4,10 @@
 #include "GameObject.h"
 #include "Map.h"
 #include "Hero.h"
+#include "Guard.h"
 
 Hero* player;
-GameObject *enemy_1, *enemy_2;
+Guard *enemy_1, *enemy_2;
 Map* map;
 
 
@@ -59,8 +60,8 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	}
 
 	player = new Hero("graphics/knight.png",  96, 96, 8);
-	enemy_1 = new GameObject("graphics/enemy.png", 0, 0);
-	enemy_2 = new GameObject("graphics/enemy.png", 0, 96);
+	enemy_1 = new Guard("graphics/enemy.png", 0, 0, 0);
+	enemy_2 = new Guard("graphics/enemy.png", 0, 96, 0);
 	map = new Map();
 }
 
@@ -83,8 +84,8 @@ void Game::handleEvents()
 void Game::update()
 {
 	cnt++;
-	enemy_1->Update();
-	enemy_2->Update();
+	enemy_1->Move();
+	enemy_2->Move();
 }
 
 void Game::render()
