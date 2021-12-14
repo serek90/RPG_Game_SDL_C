@@ -3,8 +3,9 @@
 #include <iostream>
 #include "GameObject.h"
 #include "Map.h"
+#include "Hero.h"
 
-GameObject* player;
+Hero* player;
 GameObject *enemy_1, *enemy_2;
 Map* map;
 
@@ -57,7 +58,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		is_Running = false;
 	}
 
-	player = new GameObject("graphics/knight.png",  96, 96);
+	player = new Hero("graphics/knight.png",  96, 96, 8);
 	enemy_1 = new GameObject("graphics/enemy.png", 0, 0);
 	enemy_2 = new GameObject("graphics/enemy.png", 0, 96);
 	map = new Map();
@@ -67,6 +68,7 @@ void Game::handleEvents()
 {
 	SDL_Event event;
 	SDL_PollEvent(&event);
+	player->Move(event);
 	switch (event.type)
 	{
 	case SDL_QUIT:
@@ -81,8 +83,6 @@ void Game::handleEvents()
 void Game::update()
 {
 	cnt++;
-
-	player->Update();
 	enemy_1->Update();
 	enemy_2->Update();
 }

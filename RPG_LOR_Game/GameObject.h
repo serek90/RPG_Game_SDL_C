@@ -14,6 +14,13 @@ public:
 	GameObject(const char* texturesheet, int x, int y);
 	~GameObject();
 
+	//MOve functions
+	void xIncrease();
+	void xDecrease();
+	void yIncrease();
+	void yDecrease();
+
+
 	void Update();
 	void Render();
 };
