@@ -7,7 +7,7 @@ This is a simple game app for now only for training my C and SDL skills
 ### System:
 The app was written and tested on the Windows 10 environment
 
-### Dependecies:
+### Dependencies:
 SDL2 library:
 
 ```bash
