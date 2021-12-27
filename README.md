@@ -10,17 +10,17 @@ The app was written and tested on the Windows 10 environment
 ### Dependecies:
 SDL2 library:
 
-'''bash
+```bash
 ##### SDL2.dll
-'''
+```
 
 SDL2_image-2.0.1:
 
-'''bash
+```bash
 ##### libpng16-16.dll
 ##### SDL2_image.dll
 ##### zlib1.dll
-'''
+```
 
 ### Compiler and linker:
 Visual Studio Compiler
