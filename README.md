@@ -9,12 +9,12 @@ The app was written and tested on the Windows 10 environment
 
 ### Dependecies:
 SDL2 library:
-  #####SDL2.dll
+  ####SDL2.dll
   
 SDL2_image-2.0.1:
-  #####libpng16-16.dll
-  #####SDL2_image.dll
-  #####zlib1.dll
+  ####libpng16-16.dll
+  ####SDL2_image.dll
+  ####zlib1.dll
 
 ### Compiler and linker:
 Visual Studio Compiler
