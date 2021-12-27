@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: RPG_Game_SDL_C CI
 
 on:
   push:
