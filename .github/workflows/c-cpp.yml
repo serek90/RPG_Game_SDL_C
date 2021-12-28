@@ -8,7 +8,10 @@ on:
   pull_request:
     branches: [ main ]
 
-build:
+jobs:
+  build:
+
+  steps:
   - mkdir build_msbuild
   - cd build_msbuild
   - cmake -G "Visual Studio 15 2019 Win64" ..
