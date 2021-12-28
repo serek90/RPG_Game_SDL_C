@@ -12,6 +12,6 @@ build_script:
   - mkdir build_msbuild
   - cd build_msbuild
   - cmake -G "Visual Studio 15 2019 Win64" ..
-  - msbuild ci_helloworld.sln
+  - msbuild RPG_LOR_Game.vcxproj
   - ctest
   - cd ..
