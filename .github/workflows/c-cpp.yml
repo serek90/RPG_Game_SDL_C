@@ -1,5 +1,4 @@
 name: RPG_Game_SDL_C CI
-os: Visual Studio 2019
 platform: x64
 
 on:
