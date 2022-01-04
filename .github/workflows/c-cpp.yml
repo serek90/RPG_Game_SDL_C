@@ -9,11 +9,3 @@ on:
 jobs:
   build:
     runs-on: Visual Studio 2019
-
-    steps:
-    - mkdir build_msbuild
-    - cd build_msbuild
-    - cmake -G "Visual Studio 15 2019 Win64" ..
-    - msbuild RPG_LOR_Game.sln
-    - ctest
-    - cd ..
