@@ -9,3 +9,6 @@ on:
 jobs:
   build:
     runs-on: Visual Studio 2019
+    
+    steps:
+    - uses: actions/checkout@v1
