@@ -1,5 +1,4 @@
 name: RPG_Game_SDL_C CI
-platform: x64
 
 on:
   push:
