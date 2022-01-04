@@ -1,31 +1,38 @@
 # Makefile
-
+CC = g++
 LDLIBS=-I C:\SDL2-2.0.18\x86_64-w64-mingw32\include\SDL2\\ -L C:\SDL2-2.0.18\x86_64-w64-mingw32\lib\\ -lmingw32 -lSDL2main -lSDL2 -I  C:\SDL2_image-2.0.5\x86_64-w64-mingw32\include\SDL2\\ -L C:\SDL2_image-2.0.5\x86_64-w64-mingw32\lib\\ -lSDL2_image
 
+OBJFILES =   Guard.o Hero.o Map.o TextureManager.o GameObject.o Game.o main.o
+TARGET = program.exe
+
+all: $(TARGET)
+	
+$(TARGET): $(OBJFILES)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJFILES)  -L C:\SDL2-2.0.18\x86_64-w64-mingw32\lib\\ -lmingw32 -lSDL2main -lSDL2  -mwindows -L C:\SDL2_image-2.0.5\x86_64-w64-mingw32\lib\\ -lSDL2_image
 
 TextureManager.o: TextureManager.cpp TextureManager.h
-	g++ TextureManager.cpp -c $(LDLIBS)
+	$(CC) TextureManager.cpp -c $(LDLIBS)
 
 Map.o: Map.cpp Map.h
-	g++ Map.cpp -c $(LDLIBS)
+	$(CC) Map.cpp -c $(LDLIBS)
 
 Hero.o: Hero.cpp Hero.h
-	g++ Hero.cpp -c $(LDLIBS)
+	$(CC) Hero.cpp -c $(LDLIBS)
 
 Guard.o: Guard.cpp Guard.h
-	g++ Guard.cpp -c $(LDLIBS)
+	$(CC) Guard.cpp -c $(LDLIBS)
 
 GameObject.o: GameObject.cpp GameObject.h
-	g++ GameObject.cpp -c $(LDLIBS)
+	$(CC) GameObject.cpp -c $(LDLIBS)
 
 Game.o: Game.cpp Game.h
-	g++ Game.cpp -c $(LDLIBS)
+	$(CC) Game.cpp -c $(LDLIBS)
 
-all: Game.o GameObject.o Guard.o Hero.o Map.o TextureManager.o
-	g++ Game.o GameObject.o Guard.o Hero.o Map.o TextureManager.o  $(LDLIBS) -o program.exe
+main.o: main.o
+	$(CC) main.cpp -c $(LDLIBS) 
 
 clean:
-	rm -f Game.o
+	rm -f $(OBJFILES) $(TARGET) *~
 
 dump:
 	g++ main.cpp -S
