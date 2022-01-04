@@ -31,10 +31,10 @@ zlib1.dll
 Download MinGw from site: https://sourceforge.net/projects/mingw/
 
 In cmd:
-####* Visual Studio Compiler
+#### Visual Studio Compiler
 
 
-####* MinGw compiler
+#### MinGw compiler
 ```bash
 cd RPG_Game_SDL_C\RPG_LOR_Game
 make
