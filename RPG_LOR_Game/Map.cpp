@@ -7,12 +7,13 @@ Map::Map()
 	dirt = TextureManager::LoadTexture("graphics/dirt.png");
 	grass = TextureManager::LoadTexture("graphics/grass.png");
 	water = TextureManager::LoadTexture("graphics/water.png");
+	tree = TextureManager::LoadTexture("graphics/tree.png");
 
 	LoadMap();
 
 	src.x = src.y = 0;
-	src.w = dst.w = 32;
-	src.h = dst.h = 32;
+	src.w = dst.w = 64;
+	src.h = dst.h = 64;
 
 	dst.x = dst.y = 0;
 }
@@ -41,8 +42,8 @@ void Map::Draw()
 		{
 			type = map[row][column];
 
-			dst.x = column * 32;
-			dst.y = row * 32;
+			dst.x = column * 64;
+			dst.y = row * 64;
 
 			switch (type)
 			{
@@ -57,6 +58,10 @@ void Map::Draw()
 
 			case 2:
 				TextureManager::Draw(dirt, src, dst);
+				break;
+
+			case 3:
+				TextureManager::Draw(tree, src, dst);
 				break;
 
 			default:

@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <bitset>
 #include <array>
-
+/*
 class Component;
 class Entity;
 
@@ -24,7 +24,7 @@ template <typename T> inline ComponentID getComponentID() noexcept
 
 	return typeID;
 }
-
+ 
 constexpr std::size_t maxComponents = 32;
 
 using ComponentBitSet = std::bitset<maxComponents>;
@@ -60,4 +60,15 @@ public:
 	void draw() {}
 	bool isActive() const { return active;  }
 	void destroy() { active = false;  }
-};
+
+	template <typename T> bool hasComponent() const
+	{
+		return componentitSet[getComponentID<T>];
+	}
+
+	template <typename T, typename... TArgs>
+	T& addComponent(TArgs&&... mArgs)
+	{
+
+	}
+}; */

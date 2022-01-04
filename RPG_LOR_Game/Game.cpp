@@ -11,7 +11,7 @@ Guard *enemy_1, *enemy_2;
 Map* map;
 
 
-SDL_Renderer* Game::renderer = nullptr;
+SDL_Renderer* Game::renderer = NULL; //nullptr
 
 
 Game::Game()
