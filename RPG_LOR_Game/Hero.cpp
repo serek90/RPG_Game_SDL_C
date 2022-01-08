@@ -29,6 +29,13 @@ void Hero::Move(SDL_Event event)
 			xIncrease();
 			break;
 
+		case SDLK_SPACE:
+			std::cout << "I want to jump" << std::endl;
+			break;
+
+		case SDLK_a:
+			std::cout << "Hit and kill!!! Ha ha ha" << std::endl;
+			break;
 		}
 
 	}

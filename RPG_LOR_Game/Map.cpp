@@ -25,20 +25,41 @@ Map::~Map()
 
 void Map::LoadMap() //add array
 {
-	//for (int row = 0; row < map_row; row++)
+
+	char a;
+	int row = 0, column = 0;
+	std::ifstream infile("resources/map_basic.txt");
+
+
+	std::string line;
+	while (infile >> a)
 	{
-		//for (int column = 0; column < map_row; column++);
+		std::cout << a << std::endl;
+		if (a == ',')continue;
+
+		map[row][column] = a;
+
+		std::cout << "row" << row << "column" << column << a << std::endl;
+		column++;
+		if (column >= map_column)
+		{
+			row++;
+			column = 0;
+		}
+
 	}
+
+
 
 }
 
 void Map::Draw()
 {
-	int type = 0;
+	char type;
 
 	for (int row = 0; row < map_row; row++)
 	{
-		for (int column = 0; column < map_row; column++)
+		for (int column = 0; column < map_column; column++)
 		{
 			type = map[row][column];
 
@@ -47,20 +68,19 @@ void Map::Draw()
 
 			switch (type)
 			{
-			case 0:
+			case '0':
 				TextureManager::Draw(water, src, dst);
-				//SDL_RenderCopy(Game::renderer, water, NULL, &dst);
 				break;
 
-			case 1:
+			case '1':
 				TextureManager::Draw(grass, src, dst);
 				break;
 
-			case 2:
+			case '2':
 				TextureManager::Draw(dirt, src, dst);
 				break;
 
-			case 3:
+			case '3':
 				TextureManager::Draw(tree, src, dst);
 				break;
 

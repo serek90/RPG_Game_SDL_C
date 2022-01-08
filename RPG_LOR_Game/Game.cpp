@@ -27,6 +27,7 @@ Game::~Game()
 	SDL_Quit();
 }
 
+//JSJS: Call aa a constructor???
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
 	int flags = 0;

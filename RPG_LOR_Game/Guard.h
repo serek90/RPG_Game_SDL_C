@@ -1,5 +1,6 @@
 #pragma once
 #include "GameObject.h"
+#include <iostream>
 
 class Guard :
     public GameObject
@@ -10,6 +11,6 @@ public:
     ~Guard();
 
 private:
-    int name;
+  int name;
 };
 
