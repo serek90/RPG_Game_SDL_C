@@ -5,10 +5,11 @@
 #include <algorithm>
 #include <bitset>
 #include <array>
-/*
+
 class Component;
 class Entity;
 
+/*
 using ComponentID = std::size_t;
 
 inline ComponentID getComponentID()
@@ -30,6 +31,8 @@ constexpr std::size_t maxComponents = 32;
 using ComponentBitSet = std::bitset<maxComponents>;
 using ComponentArray = std::array<Component*, maxComponents>;
 
+*/
+
 class Component
 {
 public:
@@ -46,29 +49,29 @@ class Entity
 {
 private:
 	bool active = true;
-	std::vector<std::unique_ptr<Component>> components;
+	//std::vector<std::unique_ptr<Component>> components;
 
-	ComponentArray componentArray;
-	ComponentBitSet componentBitSet;
+	//ComponentArray componentArray;
+	//ComponentBitSet componentBitSet;
 
 public:
 	void update()
 	{
-		for (auto& c : components) c->update();
-		for (auto& c : components) c->draw();
+	//	for (auto& c : components) c->update();
+	//	for (auto& c : components) c->draw();
 	}
 	void draw() {}
 	bool isActive() const { return active;  }
 	void destroy() { active = false;  }
 
-	template <typename T> bool hasComponent() const
+	/*template <typename T> bool hasComponent() const
 	{
 		return componentitSet[getComponentID<T>];
-	}
+	}*/
 
 	template <typename T, typename... TArgs>
 	T& addComponent(TArgs&&... mArgs)
 	{
 
 	}
-}; */
+};
