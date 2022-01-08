@@ -87,6 +87,8 @@ void Game::update()
 	cnt++;
 	enemy_1->Move();
 	enemy_2->Move();
+	player->Collision(*enemy_1);
+	player->Collision(*enemy_2);
 }
 
 void Game::render()

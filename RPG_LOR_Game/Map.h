@@ -23,6 +23,7 @@ private:
 	SDL_Texture* grass;
 	SDL_Texture* water;
 	SDL_Texture* tree;
+	SDL_Texture* snow;
 
 
 	char map[map_row][map_column];

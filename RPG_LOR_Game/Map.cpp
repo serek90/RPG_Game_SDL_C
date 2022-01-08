@@ -84,6 +84,10 @@ void Map::Draw()
 				TextureManager::Draw(tree, src, dst);
 				break;
 
+			case '4':
+				TextureManager::Draw(snow, src, dst);
+				break;
+
 			default:
 				break;
 			}
