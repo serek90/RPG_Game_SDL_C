@@ -10,7 +10,8 @@ GameObject::GameObject(const char* texturesheet, int x, int y) : xpos(x), ypos(y
 
 GameObject::~GameObject()
 {
-
+	SDL_DestroyTexture(objTexture);
+	std::cout << "Game Object destructor" << std::endl;
 }
 
 void GameObject::Update()
@@ -81,12 +82,12 @@ void GameObject::setYsize(int size)
 }
 
 /* Collision detection */
-void GameObject::Collision(GameObject object)
+uint8_t GameObject::Collision(GameObject *object)
 {
-	int x1_obj = object.getX();
-	int x2_obj = object.getXsize() + object.getX();
-	int y1_obj = object.getY();
-	int y2_obj = object.getYSize() + object.getY();
+	int x1_obj = object->getX();
+	int x2_obj = object->getXsize() + object->getX();
+	int y1_obj = object->getY();
+	int y2_obj = object->getYSize() + object->getY();
 
 	int x1_col = xpos;
 	int x2_col = xpos + xSize;
@@ -108,6 +109,11 @@ void GameObject::Collision(GameObject object)
 	if ((y2_obj >= y1_col) && (y2_obj <= y2_col))
 		yCheck = 1;
 
-	if(xCheck && yCheck)
+	if (xCheck && yCheck)
+	{
 		std::cout << "BIP BIP collision " << std::endl;
+		return 1;
+	}
+	return 0;
+
 }

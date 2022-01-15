@@ -20,26 +20,27 @@ Map::Map()
 
 Map::~Map()
 {
-
+	SDL_DestroyTexture(dirt);
+	SDL_DestroyTexture(grass);
+	SDL_DestroyTexture(water);
+	SDL_DestroyTexture(tree);
 }
 
 void Map::LoadMap() //add array
 {
 
-	char a;
+	char c;
 	int row = 0, column = 0;
 	std::ifstream infile("resources/map_basic.txt");
 
 
 	std::string line;
-	while (infile >> a)
+	while (infile >> c)
 	{
-		std::cout << a << std::endl;
-		if (a == ',')continue;
+		if (c == ',')continue;
 
-		map[row][column] = a;
+		map[row][column] = c;
 
-		std::cout << "row" << row << "column" << column << a << std::endl;
 		column++;
 		if (column >= map_column)
 		{

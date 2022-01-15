@@ -2,6 +2,12 @@
 #include <iostream>
 #include "TextureManager.h"
 
+
+Hero::~Hero()
+{
+	std::cout << "Hero was killed!!!" << std::endl;
+}
+
 void Hero::Move(SDL_Event event)
 {
 	static int x = 0, y = 0;

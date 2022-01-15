@@ -13,6 +13,9 @@ Map* map;
 
 SDL_Renderer* Game::renderer = NULL; //nullptr
 
+SDL_Rect  src, dst;
+int hit = 0;
+SDL_Texture* game_over_screen;
 
 Game::Game()
 {
@@ -27,10 +30,12 @@ Game::~Game()
 	SDL_Quit();
 }
 
-//JSJS: Call aa a constructor???
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
 	int flags = 0;
+
+	screenWidth = width;
+	screenHeight = height;
 
 	if (fullscreen)
 	{
@@ -64,6 +69,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	enemy_1 = new Guard("graphics/guard.png", 0, 0, 0);
 	enemy_2 = new Guard("graphics/guard.png", 0, 96, 0);
 	map = new Map();
+
 }
 
 void Game::handleEvents()
@@ -84,20 +90,42 @@ void Game::handleEvents()
 
 void Game::update()
 {
+	if (hit)
+		return;
 	cnt++;
 	enemy_1->Move();
 	enemy_2->Move();
-	player->Collision(*enemy_1);
-	player->Collision(*enemy_2);
+	if (player->Collision(enemy_1) || player->Collision(enemy_2))
+	{
+		hit = 1;
+		delete map;
+		delete player;
+		delete enemy_1;
+		delete enemy_2;
+		game_over_screen = TextureManager::LoadTexture("graphics/game_over_screen.png");
+	}
 }
 
 void Game::render()
 {
 	SDL_RenderClear(renderer);
-	map->Draw();
-	player->Render();
-	enemy_1->Render();
-	enemy_2->Render();
+
+	if (!hit)
+	{
+		map->Draw();
+		player->Render();
+		enemy_1->Render();
+		enemy_2->Render();
+	}
+	else
+	{
+		dst.x = 0;
+		dst.y = 0;
+		dst.w = screenWidth;
+		dst.h = screenHeight;
+		SDL_RenderCopy(Game::renderer, game_over_screen, NULL, &dst);
+	}
+
 	SDL_RenderPresent(renderer);
 }
 

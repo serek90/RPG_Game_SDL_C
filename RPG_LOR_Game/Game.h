@@ -25,6 +25,9 @@ private:
 	int cnt = 0;
 	bool is_Running;
 	SDL_Window *window;
+
+	int screenWidth;
+	int screenHeight;
 };
 
 #endif /* Game.h */

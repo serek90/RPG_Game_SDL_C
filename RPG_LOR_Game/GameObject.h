@@ -30,7 +30,7 @@ public:
 	void setXsize(int size);
 	void setYsize(int size);
 
-	void Collision(GameObject object);
+	uint8_t Collision(GameObject *object);
 
 
 	void Update();

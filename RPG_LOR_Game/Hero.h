@@ -1,5 +1,7 @@
 #pragma once
 #include "GameObject.h"
+#include <vector>
+#include "Item.h"
 
 class Hero :
     public GameObject
@@ -10,7 +12,7 @@ public:
 	~Hero();
 
 private:
-
+	std::vector<class Item> equipment;
 	int color;
 
 };
