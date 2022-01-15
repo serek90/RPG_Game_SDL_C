@@ -14,6 +14,9 @@ SDL2 library:
 SDL2.dll
 ```
 
+Download from: https://www.libsdl.org/download-2.0.php
+
+
 SDL2_image-2.0.1:
 
 ```bash
@@ -21,8 +24,10 @@ libpng16-16.dll
 SDL2_image.dll
 zlib1.dll
 ```
+Download from: https://www.libsdl.org/projects/SDL_image/
 
 ### Compiler and linker:
+
 * Visual Studio Compiler
 * MinGw compiler
 
@@ -44,7 +49,7 @@ C:\SDL2\lib\x64
 
 Linker -> Input -> Additional Dependencies 
 Add:
-SDL2.lib, SDL2main.lib, SDL@_image.lib
+SDL2.lib, SDL2main.lib, SDL2_image.lib
 
 #### MinGw compiler
 Download MinGw from site: https://sourceforge.net/projects/mingw/
@@ -57,3 +62,4 @@ cd RPG_Game_SDL_C\RPG_LOR_Game
 make
 ```
 ## 3. Run
+
