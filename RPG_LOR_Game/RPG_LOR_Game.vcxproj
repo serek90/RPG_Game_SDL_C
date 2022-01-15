@@ -154,8 +154,10 @@
     <ClInclude Include="ECS.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameOverScreen.h" />
     <ClInclude Include="Guard.h" />
     <ClInclude Include="Hero.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="TextureManager.h" />
   </ItemGroup>
@@ -163,8 +165,10 @@
     <ClCompile Include="ECS.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameOverScreen.cpp" />
     <ClCompile Include="Guard.cpp" />
     <ClCompile Include="Hero.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="TextureManager.cpp" />

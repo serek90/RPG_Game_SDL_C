@@ -1,5 +1,9 @@
 #include "Guard.h"
 
+Guard::~Guard()
+{
+	
+}
 
 void Guard::Move()
 {
