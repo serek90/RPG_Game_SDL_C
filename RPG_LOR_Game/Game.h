@@ -1,8 +1,13 @@
 #ifndef GAME_H
 #define GAME_H
 
+#ifndef LINUX_ENV
 #include <SDL.h>
 #include <SDL_image.h>
+#else
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#endif
 
 class Game
 {
