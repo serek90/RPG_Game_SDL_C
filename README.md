@@ -8,7 +8,7 @@ This is a simple game app for now only for training my C and SDL skills
 The app was written and tested on the Windows 10 environment
 
 For Linux build go to:
-[a relative link]LINUX_ENV.md
+[here](LINUX_ENV.md)
 
 ### Dependencies:
 SDL2 library:

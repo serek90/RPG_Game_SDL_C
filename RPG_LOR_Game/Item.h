@@ -6,7 +6,6 @@ class Item
 public:
 	Item();
 
-
 	std::string name;
 };
 

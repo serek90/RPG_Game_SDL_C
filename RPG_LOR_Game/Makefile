@@ -1,6 +1,11 @@
 # Makefile
 CC = g++
-LDLIBS=-I C:\SDL2-2.0.18\x86_64-w64-mingw32\include\SDL2\\ -L C:\SDL2-2.0.18\x86_64-w64-mingw32\lib\\ -lmingw32 -lSDL2main -lSDL2 -I  C:\SDL2_image-2.0.5\x86_64-w64-mingw32\include\SDL2\\ -L C:\SDL2_image-2.0.5\x86_64-w64-mingw32\lib\\ -lSDL2_image
+
+ifeq ($(OS),Windows_NT)
+LDLIBS=-I C:\SDL2-2.0.18\x86_64-w64-mingw32\include\SDL2\\ -L C:\SDL2-2.0.18\x86_64-w64-mingw32\lib\\ -lmingw32 -lSDL2main -lSDL2 -mwindows -I  C:\SDL2_image-2.0.5\x86_64-w64-mingw32\include\SDL2\\ -L C:\SDL2_image-2.0.5\x86_64-w64-mingw32\lib\\ -lSDL2_image
+else 
+LDLIBS= -lSDL2main -lSDL2 -lSDL2_image
+endif
 
 OBJFILES =   Guard.o Hero.o Map.o TextureManager.o GameObject.o Game.o main.o
 TARGET = program.exe
@@ -8,7 +13,7 @@ TARGET = program.exe
 all: $(TARGET)
 	
 $(TARGET): $(OBJFILES)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJFILES)  -L C:\SDL2-2.0.18\x86_64-w64-mingw32\lib\\ -lmingw32 -lSDL2main -lSDL2  -mwindows -L C:\SDL2_image-2.0.5\x86_64-w64-mingw32\lib\\ -lSDL2_image
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJFILES) $(LDLIBS)
 
 TextureManager.o: TextureManager.cpp TextureManager.h
 	$(CC) TextureManager.cpp -c $(LDLIBS)
@@ -34,6 +39,4 @@ main.o: main.o
 clean:
 	rm -f $(OBJFILES) $(TARGET) *~
 
-dump:
-	g++ main.cpp -S
 
