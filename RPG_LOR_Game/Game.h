@@ -1,7 +1,8 @@
 #ifndef GAME_H
 #define GAME_H
 
-#ifndef LINUX_ENV
+
+#if defined(_WIN32)
 #include <SDL.h>
 #include <SDL_image.h>
 #else
@@ -16,7 +17,7 @@ public:
 	~Game();
 
 	void init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);
-	
+
 	void handleEvents();
 	void update();
 	void render();
@@ -36,3 +37,4 @@ private:
 };
 
 #endif /* Game.h */
+
