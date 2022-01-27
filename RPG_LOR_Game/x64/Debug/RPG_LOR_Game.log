@@ -1,0 +1,15 @@
+﻿  Game.cpp
+C:\Users\PC\Documents\GitHub\RPG_Game_SDL_C\RPG_LOR_Game\Game.h(7,10): fatal error C1083: Cannot open include file: 'SDL_image.h': No such file or directory
+  GameObject.cpp
+C:\Users\PC\Documents\GitHub\RPG_Game_SDL_C\RPG_LOR_Game\Game.h(7,10): fatal error C1083: Cannot open include file: 'SDL_image.h': No such file or directory
+  Guard.cpp
+C:\Users\PC\Documents\GitHub\RPG_Game_SDL_C\RPG_LOR_Game\Game.h(7,10): fatal error C1083: Cannot open include file: 'SDL_image.h': No such file or directory
+  Hero.cpp
+C:\Users\PC\Documents\GitHub\RPG_Game_SDL_C\RPG_LOR_Game\Game.h(7,10): fatal error C1083: Cannot open include file: 'SDL_image.h': No such file or directory
+  main.cpp
+C:\Users\PC\Documents\GitHub\RPG_Game_SDL_C\RPG_LOR_Game\Game.h(7,10): fatal error C1083: Cannot open include file: 'SDL_image.h': No such file or directory
+  Map.cpp
+C:\Users\PC\Documents\GitHub\RPG_Game_SDL_C\RPG_LOR_Game\Game.h(7,10): fatal error C1083: Cannot open include file: 'SDL_image.h': No such file or directory
+  TextureManager.cpp
+C:\Users\PC\Documents\GitHub\RPG_Game_SDL_C\RPG_LOR_Game\Game.h(7,10): fatal error C1083: Cannot open include file: 'SDL_image.h': No such file or directory
+  Generating Code...

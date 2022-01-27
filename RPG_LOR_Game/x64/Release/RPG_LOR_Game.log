@@ -1,0 +1,13 @@
+﻿  Game.cpp
+  GameObject.cpp
+  Guard.cpp
+  Hero.cpp
+  Item.cpp
+  Map.cpp
+  TextureManager.cpp
+  main.cpp
+  Generating code
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  All 201 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  RPG_LOR_Game.vcxproj -> C:\Users\PC\Documents\GitHub\RPG_Game_SDL_C\x64\Release\RPG_LOTR_Game.exe
