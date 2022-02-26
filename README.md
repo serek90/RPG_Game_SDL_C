@@ -66,7 +66,9 @@ make
 ```
 ## 3. Run
 Copy dll files to the .exe folder:
--SDL2.dll
--SDL2_image.dll
--libpng16-16.dll
--zlib1.dll
+* SDL2.dll
+* SDL2_image.dll
+* libpng16-16.dll
+* zlib1.dll
+
+And start .exe file
