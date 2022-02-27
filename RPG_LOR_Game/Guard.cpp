@@ -1,3 +1,7 @@
+/*
+*
+* created by: serek90
+*/
 #include "Guard.h"
 
 Guard::~Guard()

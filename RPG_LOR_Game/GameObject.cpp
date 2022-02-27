@@ -1,3 +1,7 @@
+/*
+*
+* created by: serek90
+*/
 #include "GameObject.h"
 #include "TextureManager.h"
 #include <iostream>

@@ -1,13 +1,20 @@
+/*
+*
+* created by: serek90
+*/
+
+#include <iostream>
 #include "Game.h"
 #include "TextureManager.h"
-#include <iostream>
 #include "GameObject.h"
 #include "Map.h"
 #include "Hero.h"
 #include "Guard.h"
+#include "Item.h"
 
 Hero* player;
 Guard *enemy_1, *enemy_2;
+Item* sword;
 Map* map;
 
 
@@ -65,9 +72,10 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		is_Running = false;
 	}
 
-	player = new Hero("graphics/knight.png",  96, 96, 8);
+	player = new Hero("graphics/knight.png",  192, 192, 8);
 	enemy_1 = new Guard("graphics/guard.png", 0, 0, 0);
 	enemy_2 = new Guard("graphics/guard.png", 0, 96, 0);
+	sword = new Item("graphics/sword.png", 100, 296, 0);
 	map = new Map();
 
 }
@@ -95,15 +103,25 @@ void Game::update()
 	cnt++;
 	enemy_1->Move();
 	enemy_2->Move();
-	if (player->Collision(enemy_1) || player->Collision(enemy_2))
+	if (player->Collision(enemy_1) || player->Collision(enemy_2)) /*add issue, it is awful, must to revrite it*/
 	{
 		hit = 1;
 		delete map;
 		delete player;
 		delete enemy_1;
 		delete enemy_2;
+		delete sword;
 		game_over_screen = TextureManager::LoadTexture("graphics/game_over_screen.png");
 	}
+	if (sword->isOn())
+	{
+		if (player->Collision(sword))
+		{
+			player->takeItem(sword);
+		}
+		sword->Update();
+	}
+
 }
 
 void Game::render()
@@ -116,6 +134,10 @@ void Game::render()
 		player->Render();
 		enemy_1->Render();
 		enemy_2->Render();
+		if (sword->isOn())
+		{
+			sword->Render();
+		}
 	}
 	else
 	{

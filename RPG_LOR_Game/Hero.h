@@ -1,3 +1,7 @@
+/*
+*
+* created by: serek90
+*/
 #pragma once
 #include "GameObject.h"
 #include <vector>
@@ -9,7 +13,8 @@ class Hero :
 public:
     void Move(SDL_Event event);
 	Hero(const char* textureSheet, int X, int Y, int color) : GameObject(textureSheet, X, Y), color(color) {}
-	~Hero();
+	virtual ~Hero();
+	void takeItem(Item *item);
 
 private:
 	std::vector<class Item> equipment;

@@ -1,3 +1,7 @@
+/*
+*
+* created by: serek90
+*/
 #ifndef TEXTUREMANAGER_H
 #define TEXTUREMANAGER_H
 

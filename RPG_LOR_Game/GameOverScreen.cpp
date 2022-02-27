@@ -1,3 +1,7 @@
+/*
+*
+* created by: serek90
+*/
 #include "GameOverScreen.h"
 
 GameOverScreen::GameOverScreen()

@@ -1,3 +1,7 @@
+/*
+*
+* created by: serek90
+*/
 #ifndef GAME_H
 #define GAME_H
 

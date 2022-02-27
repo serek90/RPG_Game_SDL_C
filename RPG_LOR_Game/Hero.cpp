@@ -1,3 +1,7 @@
+/*
+*
+* created by: serek90
+*/
 #include "Hero.h"
 #include <iostream>
 #include "TextureManager.h"
@@ -49,3 +53,9 @@ void Hero::Move(SDL_Event event)
 	this->Update();
 }
 
+void Hero::takeItem(Item *item)
+{
+	item->hide();
+	SDL_DestroyTexture(objTexture);
+	objTexture = TextureManager::LoadTexture("graphics/knight_sword.png");
+}

@@ -1,8 +1,14 @@
 #include "TextureManager.h"
+#include <iostream>
 
 SDL_Texture* TextureManager::LoadTexture(const char* fileName)
 {
 	SDL_Surface* tmpSurface = IMG_Load(fileName);
+	if (!tmpSurface)
+	{
+		std::cout << "Surface creation FAILED!" << std::endl;
+		std::cout << "ther is no graphic or zlib.dll or libpng.dll is mising" << std::endl;
+	}
 	SDL_Texture * tmpText = SDL_CreateTextureFromSurface(Game::renderer, tmpSurface);
 	SDL_FreeSurface(tmpSurface);
 

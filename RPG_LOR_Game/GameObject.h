@@ -1,9 +1,13 @@
+/*
+*
+* created by: serek90
+*/
 #pragma once
 #include "Game.h"
 
 class GameObject
 {
-private:
+protected:
 	int xpos;
 	int ypos;
 	int ySize = 64;

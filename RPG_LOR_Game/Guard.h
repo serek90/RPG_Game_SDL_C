@@ -1,3 +1,7 @@
+/*
+*
+* created by: serek90
+*/
 #pragma once
 #include "GameObject.h"
 #include <iostream>
@@ -8,7 +12,7 @@ class Guard :
 public:
     void Move();
     Guard(const char* textureSheet, int X, int Y, int color) : GameObject(textureSheet, X, Y), name(color) {}
-    ~Guard();
+    virtual ~Guard();
 
 private:
   int name;
