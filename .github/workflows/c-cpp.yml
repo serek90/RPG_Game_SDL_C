@@ -1,18 +1,14 @@
-name: RPG_Game_SDL_C CI
-os: Visual Studio 2019
-platform: x64
+image: gcc
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+before_script:
+    -apt-get update && apt-get -y install cake
 
-build:
-  - cd RPG_LOR_Game
-  - mkdir build_msbuild
-  - cd build_msbuild
-  - cmake -G "Visual Studio 17" ..
-  - msbuild RPG_LOR_Game.vcxproj
-  - ctest
-  - cd ..
+
+myapp:
+    stage: build
+    script:
+        - cd RPG_LOR_Game
+        - mkdir build
+        - cd build
+        - cake ..
+        - make
