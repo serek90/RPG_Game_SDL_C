@@ -21,5 +21,8 @@ jobs:
           run: cd RPG_LOR_Game
          # run: pwd
     
+        - name: Enter directory
+          run: cd RPG_LOR_Game
+
         - name: Build
           run: ls
