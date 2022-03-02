@@ -1,3 +1,5 @@
+name: CMake
+
 on:
   push:
     branches: [ main ]
