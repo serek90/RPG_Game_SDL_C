@@ -21,4 +21,4 @@ jobs:
           run: cd RPG_LOR_Game
     
         - name: Build
-          run: make
+          run: make clean
