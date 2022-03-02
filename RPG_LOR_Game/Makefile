@@ -7,7 +7,7 @@ else
 LDLIBS= -lSDL2main -lSDL2 -lSDL2_image
 endif
 
-OBJFILES =   Guard.o Hero.o Map.o TextureManager.o GameObject.o Game.o main.o
+OBJFILES =   Guard.o Hero.o Map.o Item.o TextureManager.o GameObject.o Game.o main.o
 TARGET = program.exe
 
 all: $(TARGET)
@@ -26,6 +26,9 @@ Hero.o: Hero.cpp Hero.h
 
 Guard.o: Guard.cpp Guard.h
 	$(CC) Guard.cpp -c $(LDLIBS)
+
+Item.o: Item.cpp Item.h
+	$(CC) Item.cpp -c $(LDLIBS)
 
 GameObject.o: GameObject.cpp GameObject.h
 	$(CC) GameObject.cpp -c $(LDLIBS)
