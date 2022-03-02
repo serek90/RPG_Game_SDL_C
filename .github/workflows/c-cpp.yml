@@ -22,4 +22,4 @@ jobs:
          # run: pwd
     
         - name: Build
-          run: make clean
+          run: ls
