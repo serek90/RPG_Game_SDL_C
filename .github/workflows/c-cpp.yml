@@ -18,10 +18,3 @@ jobs:
             # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
             #run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
         run: cmake -G "Visual Studio 16"
-        - mkdir build
-        - cd RPG_LOR_Game
-        - apt-get update 
-        - apt-get -y install cmake
-        - cd build
-        - cmake ..
-        - make
