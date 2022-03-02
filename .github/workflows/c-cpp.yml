@@ -1,6 +1,4 @@
-name: RPG_Game_SDL_C CI
-os: Visual Studio 2019
-platform: x64
+name: CMake
 
 on:
   push:
@@ -8,10 +6,14 @@ on:
   pull_request:
     branches: [ main ]
 
-build:
-  - mkdir build_msbuild
-  - cd build_msbuild
-  - cmake -G "Visual Studio 15 2019 Win64" ..
-  - msbuild RPG_LOR_Game.vcxproj
-  - ctest
-  - cd ..
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+        - uses: actions/checkout@v2
+       
+        - name: Configure Environment
+          run: sudo apt install libsdl2-dev && sudo apt install libsdl2-image-dev
+        - name: Make
+          run: make -C "RPG_LOR_Game"
