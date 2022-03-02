@@ -18,6 +18,6 @@ jobs:
             # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
             #run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
           #run: cmake -G "Visual Studio 16"
-          run: sudo apt  sudo apt install libsdl2-dev && sudo apt install libsdl2-image-dev
+          run: sudo apt install libsdl2-dev && sudo apt install libsdl2-image-dev
         - name: Enter directory
           run: make -C "RPG_LOR_Game"
