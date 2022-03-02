@@ -9,7 +9,8 @@ image: gcc
 
 
 jobs:
-    - apt-get update && apt-get -y install cmake
+    - apt-get update 
+    - apt-get -y install cmake
     - cd RPG_LOR_Game
     - mkdir build
     - cd build
