@@ -6,13 +6,15 @@ on:
 
 image: gcc
 
-
-
 jobs:
-    - apt-get update 
-    - apt-get -y install cmake
-    - cd RPG_LOR_Game
-    - mkdir build
-    - cd build
-    - cmake ..
-    - make
+    build:
+        runs-on: linux-latest
+
+    steps:
+        - apt-get update 
+        - apt-get -y install cmake
+        - cd RPG_LOR_Game
+        - mkdir build
+        - cd build
+        - cmake ..
+        - make
