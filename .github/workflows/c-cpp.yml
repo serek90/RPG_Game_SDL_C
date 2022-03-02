@@ -22,7 +22,7 @@ jobs:
          # run: pwd
     
         - name: Enter directory
-          run: cd RPG_LOR_Game
+          run: make -C "RPG_LOR_Game"
 
         - name: Build
           run: ls
