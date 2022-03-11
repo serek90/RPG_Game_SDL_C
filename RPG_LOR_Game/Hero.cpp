@@ -46,6 +46,9 @@ void Hero::Move(SDL_Event event)
 		case SDLK_a:
 			std::cout << "Hit and kill!!! Ha ha ha" << std::endl;
 			break;
+		case SDLK_e:
+			printItems();
+			break;
 		}
 
 	}
@@ -69,6 +72,6 @@ void Hero::printItems()
 	// Iterate over a vector using range based for loop
 	for (auto& elem : equipment)
 	{
-		std::cout << elem << ", ";
+		std::cout << elem;
 	}
 }
