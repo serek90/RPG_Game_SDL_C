@@ -8,17 +8,19 @@
 
 class Item:public GameObject
 {
+private:
+	int _color = 12;
+	std::string _name;
+	bool _visible = true;
+
 public:
 	Item();
-	Item(const char* textureSheet, int X, int Y, int color) : GameObject(textureSheet, X, Y), _color(color) {}
+	Item(const char* textureSheet, int X, int Y,  std::string name) : GameObject(textureSheet, X, Y), _name(name) {}
 	virtual ~Item();
 	bool isOn();
 	void hide();
 
+	friend std::ostream& operator<<(std::ostream& os, const Item& item);
 
-private:
-	int _color;
-	bool _visible = true;
-	std::string name;
 };
 

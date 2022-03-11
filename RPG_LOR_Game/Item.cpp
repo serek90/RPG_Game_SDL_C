@@ -19,3 +19,9 @@ void Item::hide()
 {
 	_visible = false;
 }
+
+std::ostream& operator<<(std::ostream& os, const Item& item)
+{
+	os << item._name << std::endl;
+	return os;
+}

@@ -75,7 +75,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	player = new Hero("graphics/knight.png",  192, 192, 8);
 	enemy_1 = new Guard("graphics/guard.png", 0, 0, 0);
 	enemy_2 = new Guard("graphics/guard.png", 0, 96, 0);
-	sword = new Item("graphics/sword.png", 100, 296, 0);
+	sword = new Item("graphics/sword.png", 100, 296, "sword_1");
 	map = new Map();
 
 }

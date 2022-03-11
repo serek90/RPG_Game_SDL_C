@@ -58,4 +58,17 @@ void Hero::takeItem(Item *item)
 	item->hide();
 	SDL_DestroyTexture(objTexture);
 	objTexture = TextureManager::LoadTexture("graphics/knight_sword.png");
+
+	equipment.push_back(*item);
+	printItems();
+}
+
+void Hero::printItems()
+{
+	std::cout << "Hero has in his equipment:" << std::endl;
+	// Iterate over a vector using range based for loop
+	for (auto& elem : equipment)
+	{
+		std::cout << elem << ", ";
+	}
 }

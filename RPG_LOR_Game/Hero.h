@@ -15,6 +15,7 @@ public:
 	Hero(const char* textureSheet, int X, int Y, int color) : GameObject(textureSheet, X, Y), color(color) {}
 	virtual ~Hero();
 	void takeItem(Item *item);
+	void printItems();
 
 private:
 	std::vector<class Item> equipment;
