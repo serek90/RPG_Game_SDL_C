@@ -96,22 +96,37 @@ void Game::handleEvents()
 	}
 }
 
-void Game::update()
+void Game::update() /*add issue, it is awful, must to rewrite it*/
 {
 	if (hit)
 		return;
 	cnt++;
-	enemy_1->Move();
-	enemy_2->Move();
-	if (player->Collision(enemy_1) || player->Collision(enemy_2)) /*add issue, it is awful, must to revrite it*/
+	if(enemy_1)enemy_1->Move();
+	if(enemy_2)enemy_2->Move();
+	if (enemy_1 && enemy_2)
 	{
-		hit = 1;
-		delete map;
-		delete player;
-		delete enemy_1;
-		delete enemy_2;
-		delete sword;
-		game_over_screen = TextureManager::LoadTexture("graphics/game_over_screen.png");
+		if (player->Collision(enemy_1) || player->Collision(enemy_2))
+		{
+			if (player->_attack > enemy_1->_attack || player->_attack > enemy_2->_attack)
+			{
+				delete enemy_1;
+				delete enemy_2;
+				enemy_1 = nullptr;
+				enemy_2 = nullptr;
+				std::cout << "Enemy was killed" << std::endl;
+			}
+			else
+			{
+				hit = 1;
+				delete map;
+				delete player;
+				delete enemy_1;
+				delete enemy_2;
+				delete sword;
+				game_over_screen = TextureManager::LoadTexture("graphics/game_over_screen.png");
+			}
+
+		}
 	}
 	if (sword->isOn())
 	{
@@ -132,8 +147,8 @@ void Game::render()
 	{
 		map->Draw();
 		player->Render();
-		enemy_1->Render();
-		enemy_2->Render();
+		if(enemy_1)enemy_1->Render();
+		if(enemy_2)enemy_2->Render();
 		if (sword->isOn())
 		{
 			sword->Render();

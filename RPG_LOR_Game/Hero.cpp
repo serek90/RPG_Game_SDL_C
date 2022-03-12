@@ -63,6 +63,8 @@ void Hero::takeItem(Item *item)
 	objTexture = TextureManager::LoadTexture("graphics/knight_sword.png");
 
 	equipment.push_back(*item);
+	_defence += item->_defence;
+	_attack += item->_attack;
 	printItems();
 }
 
@@ -74,4 +76,12 @@ void Hero::printItems()
 	{
 		std::cout << elem;
 	}
+
+	std::cout << "defence" << _defence << std::endl;
+	std::cout << "attack" << _attack << std::endl;
+}
+
+bool Hero::fight()
+{
+	return true;
 }

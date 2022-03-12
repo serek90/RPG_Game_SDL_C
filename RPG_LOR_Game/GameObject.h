@@ -20,7 +20,7 @@ public:
 	GameObject(const char* texturesheet, int x, int y);
 	~GameObject();
 
-	//MOve functions
+	//Move functions
 	void xIncrease();
 	void xDecrease();
 	void yIncrease();

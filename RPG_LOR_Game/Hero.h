@@ -16,10 +16,16 @@ public:
 	virtual ~Hero();
 	void takeItem(Item *item);
 	void printItems();
+	bool Hero::fight();
+
+	int _defence = 5;
+	int _attack = 5;
 
 private:
 	std::vector<class Item> equipment;
 	int _color;
+	std::string _name;
+
 
 };
 
