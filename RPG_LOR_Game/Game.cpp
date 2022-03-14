@@ -11,6 +11,9 @@
 #include "Hero.h"
 #include "Guard.h"
 #include "Item.h"
+#include "MapScreen.h"
+#include "MenuScreen.h"
+#include "GameOverScreen.h"
 
 Hero* player;
 Guard *enemy_1, *enemy_2;

@@ -16,7 +16,8 @@ public:
 	virtual ~Hero();
 	void takeItem(Item *item);
 	void printItems();
-	bool Hero::fight();
+	bool fight();
+
 
 	int _defence = 5;
 	int _attack = 5;

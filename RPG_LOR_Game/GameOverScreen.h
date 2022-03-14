@@ -3,11 +3,14 @@
 * created by: serek90
 */
 #pragma once
-class GameOverScreen
-{
+#include "Screen.h"
 
+class GameOverScreen :
+	public Screen
+{
+public:
 	GameOverScreen();
-	~GameOverScreen();
+	virtual ~GameOverScreen();
 
 	void display();
 };
