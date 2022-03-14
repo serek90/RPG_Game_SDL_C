@@ -7,7 +7,7 @@ else
 LDLIBS= -lSDL2main -lSDL2 -lSDL2_image
 endif
 
-OBJFILES =   Screen.o MapSreen.o GameOverScreen.o MenuScreen.o Guard.o Hero.o Map.o Item.o TextureManager.o GameObject.o Game.o main.o
+OBJFILES =   Screen.o MapScreen.o GameOverScreen.o MenuScreen.o Guard.o Hero.o Map.o Item.o TextureManager.o GameObject.o Game.o main.o
 TARGET = program.exe
 
 all: $(TARGET)
