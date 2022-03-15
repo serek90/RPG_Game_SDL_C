@@ -20,6 +20,6 @@ public:
 
 	int virtual update();
 	void virtual render();
-	virtual void handleEvent(SDL_Event event) {};
+	virtual void handleEvent(SDL_Event event);
 };
 

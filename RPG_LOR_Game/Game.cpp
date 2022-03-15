@@ -77,7 +77,6 @@ void Game::handleEvents()
 	SDL_Event event;
 	SDL_PollEvent(&event);
 
-	actualScreen->handleEvent(event);
 	switch (event.type)
 	{
 	case SDL_QUIT:
@@ -85,17 +84,32 @@ void Game::handleEvents()
 		break;
 
 	default:
+			actualScreen->handleEvent(event);
 		break;
 	}
 }
 
 void Game::update()
 {
+	static int x = 0;
 
-	if (actualScreen->update())
+	actualScreen->update();
+	if(!(actualScreen->isOn()))
 	{
-		delete(actualScreen);
-		actualScreen = new GameOverScreen();
+		if(x == 0) // JSJS TODO: rewrite to use next screen
+		{
+			delete(actualScreen);
+			actualScreen = new GameOverScreen();
+			x = 1;
+		}
+		else
+		{
+			delete(actualScreen);
+			actualScreen = new MapScreen();
+			x = 0;
+		}
+
+
 	}
 }
 

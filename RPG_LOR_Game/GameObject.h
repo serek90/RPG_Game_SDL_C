@@ -12,12 +12,13 @@ protected:
 	int ypos;
 	int ySize = 64;
 	int xSize = 64;
+	bool _isShowing;
 
 	SDL_Texture* objTexture;
 	SDL_Rect srcRect, dstRect;
 
 public:
-	GameObject(const char* texturesheet, int x, int y);
+	GameObject(const char* texturesheet, int x, int y) ;
 	~GameObject();
 
 	//Move functions
@@ -35,7 +36,8 @@ public:
 	void setYsize(int size);
 
 	uint8_t Collision(GameObject *object);
-
+	bool isShowing() { return _isShowing;  }
+	void stopShowing() { _isShowing = false; }
 
 	void Update();
 	void Render();

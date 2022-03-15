@@ -35,6 +35,7 @@ int MapScreen::update()
 				delete _enemy_2;
 				delete _sword;
 
+				this->off();
 				return 1;
 			}
 

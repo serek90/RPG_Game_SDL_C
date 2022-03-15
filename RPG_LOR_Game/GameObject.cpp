@@ -8,6 +8,7 @@
 
 GameObject::GameObject(const char* texturesheet, int x, int y) : xpos(x), ypos(y)
 {
+	_isShowing = true;
 	objTexture = TextureManager::LoadTexture(texturesheet);
 	std::cout << "Game Object constructor call texture" << texturesheet << std::endl;
 }
