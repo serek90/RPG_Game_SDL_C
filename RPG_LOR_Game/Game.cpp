@@ -109,7 +109,6 @@ void Game::update()
 			x = 0;
 		}
 
-
 	}
 }
 

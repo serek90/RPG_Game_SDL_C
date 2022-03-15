@@ -12,7 +12,8 @@ GameOverScreen::GameOverScreen()
 
 GameOverScreen::~GameOverScreen()
 {
-
+	SDL_DestroyTexture(_texture);
+	std::cout << "Game Object destructor" << std::endl;
 }
 
 void GameOverScreen::display()
