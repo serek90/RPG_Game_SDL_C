@@ -15,17 +15,10 @@
 #include "MenuScreen.h"
 #include "GameOverScreen.h"
 
-Hero* player;
-Guard *enemy_1, *enemy_2;
-Item* sword;
-Map* map;
 
-
+Screen* actualScreen;
 SDL_Renderer* Game::renderer = NULL; //nullptr
 
-SDL_Rect  src, dst;
-int hit = 0;
-SDL_Texture* game_over_screen;
 
 Game::Game()
 {
@@ -75,11 +68,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		is_Running = false;
 	}
 
-	player = new Hero("graphics/knight.png",  192, 192, 8);
-	enemy_1 = new Guard("graphics/guard.png", 0, 0, 0);
-	enemy_2 = new Guard("graphics/guard.png", 0, 96, 0);
-	sword = new Item("graphics/sword.png", 100, 296, "sword_1");
-	map = new Map();
+	actualScreen = new MapScreen();
 
 }
 
@@ -87,7 +76,8 @@ void Game::handleEvents()
 {
 	SDL_Event event;
 	SDL_PollEvent(&event);
-	player->Move(event);
+
+	actualScreen->handleEvent(event);
 	switch (event.type)
 	{
 	case SDL_QUIT:
@@ -99,72 +89,21 @@ void Game::handleEvents()
 	}
 }
 
-void Game::update() /*add issue, it is awful, must to rewrite it*/
+void Game::update()
 {
-	if (hit)
-		return;
-	cnt++;
-	if(enemy_1)enemy_1->Move();
-	if(enemy_2)enemy_2->Move();
-	if (enemy_1 && enemy_2)
-	{
-		if (player->Collision(enemy_1) || player->Collision(enemy_2))
-		{
-			if (player->_attack > enemy_1->_attack || player->_attack > enemy_2->_attack)
-			{
-				delete enemy_1;
-				delete enemy_2;
-				enemy_1 = nullptr;
-				enemy_2 = nullptr;
-				std::cout << "Enemy was killed" << std::endl;
-			}
-			else
-			{
-				hit = 1;
-				delete map;
-				delete player;
-				delete enemy_1;
-				delete enemy_2;
-				delete sword;
-				game_over_screen = TextureManager::LoadTexture("graphics/game_over_screen.png");
-			}
 
-		}
-	}
-	if (sword->isOn())
+	if (actualScreen->update())
 	{
-		if (player->Collision(sword))
-		{
-			player->takeItem(sword);
-		}
-		sword->Update();
+		delete(actualScreen);
+		actualScreen = new GameOverScreen();
 	}
-
 }
 
 void Game::render()
 {
 	SDL_RenderClear(renderer);
 
-	if (!hit)
-	{
-		map->Draw();
-		player->Render();
-		if(enemy_1)enemy_1->Render();
-		if(enemy_2)enemy_2->Render();
-		if (sword->isOn())
-		{
-			sword->Render();
-		}
-	}
-	else
-	{
-		dst.x = 0;
-		dst.y = 0;
-		dst.w = screenWidth;
-		dst.h = screenHeight;
-		SDL_RenderCopy(Game::renderer, game_over_screen, NULL, &dst);
-	}
+	actualScreen->render();
 
 	SDL_RenderPresent(renderer);
 }

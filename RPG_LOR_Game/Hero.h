@@ -19,8 +19,8 @@ public:
 	bool fight();
 
 
-	int _defence = 5;
-	int _attack = 5;
+	int _defence = 5; //move to private
+	int _attack = 5; //move to private
 
 private:
 	std::vector<class Item> equipment;
