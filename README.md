@@ -36,6 +36,14 @@ Download from: https://www.libsdl.org/projects/SDL_image/
 
 
 ## 2. Build
+#### cmake
+
+In RPG_Game_SDL_C dir:
+
+```bash
+mkdir
+cmake .. -G "Visual Studio 16"
+```
 
 #### Visual Studio Compiler
 Right click to the project and chose "Properties"
