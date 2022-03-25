@@ -29,6 +29,7 @@ zlib1.dll
 ```
 Download from: https://www.libsdl.org/projects/SDL_image/
 
+Download gmock!!!!!!!!!!!
 ### Compiler and linker:
 
 * Visual Studio Compiler
