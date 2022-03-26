@@ -1,19 +1,28 @@
 #include <iostream>
 #include <gtest/gtest.h>
-//#include "../RPG_LOR_Game/Screen.h"
-//#include "../RPG_LOR_Game/MapScreen.h"
 
-class MapScreen
-{
-public:
-	int isOn() { return 0; }
-};
+#include "../RPG_LOR_Game/MapScreen.h"
+#include "../RPG_LOR_Game/GameOverScreen.h"
+#include "../RPG_LOR_Game/MenuScreen.h"
 
 
-TEST(blaTest, test1)
+
+TEST(MapScreenInit, init)
 {
 	MapScreen screen;
-	EXPECT_EQ (0, screen.isOn());
+	EXPECT_EQ (1, screen.isOn());
+}
+
+TEST(GameOverscreenInit, init)
+{
+	GameOverScreen screen;
+	EXPECT_EQ(1, screen.isOn());
+}
+
+TEST(MenuScreenInit, init)
+{
+	MenuScreen screen;
+	EXPECT_EQ(1, screen.isOn());
 }
 
 int main(int argc, char* argv[])
