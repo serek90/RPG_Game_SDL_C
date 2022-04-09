@@ -19,6 +19,7 @@ public:
 
 private:
   int _name;
+  Guard();
 
 };
 

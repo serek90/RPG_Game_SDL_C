@@ -122,3 +122,9 @@ uint8_t GameObject::Collision(GameObject *object)
 	return 0;
 
 }
+
+void GameObject::updateTexture(const char* texturesheet)
+{
+	SDL_DestroyTexture(objTexture);
+	objTexture = TextureManager::LoadTexture(texturesheet);
+}

@@ -15,6 +15,7 @@ Hero::~Hero()
 void Hero::Move(SDL_Event event)
 {
 	static int x = 0, y = 0;
+	static int counter = 0;
 
 	if(event.type ==  SDL_KEYDOWN)
 	{
@@ -29,10 +30,18 @@ void Hero::Move(SDL_Event event)
 		
 		case SDLK_LEFT:
 			xDecrease();
+			if(currntTexture != "left")
+				this->updateTexture(textureLeft);
+			currntTexture = "left";
+			counter = 0;
 			break;
 
 		case SDLK_RIGHT:
 			xIncrease();
+			if(currntTexture != "right")
+				this->updateTexture(textureRight);
+			currntTexture = "right";
+			counter = 0;
 			break;
 
 		case SDLK_SPACE:
@@ -46,6 +55,14 @@ void Hero::Move(SDL_Event event)
 			printItems();
 			break;
 		}
+	}
+	else
+	{
+		if (counter++ == 200) //JSJS ???
+		{
+			this->updateTexture(textureFront);
+			currntTexture = "front";
+		}
 
 	}
 
@@ -55,8 +72,7 @@ void Hero::Move(SDL_Event event)
 void Hero::takeItem(Item *item)
 {
 	item->hide();
-	SDL_DestroyTexture(objTexture);
-	objTexture = TextureManager::LoadTexture("graphics/knight_sword.png");
+	updateSwordTexture();
 
 	equipment.push_back(*item);
 	_defence += item->_defence;
@@ -80,4 +96,15 @@ void Hero::printItems()
 bool Hero::fight()
 {
 	return true;
+}
+
+/*
+*
+* Metod to updated hero textures, need to move to item, sword class
+*/
+void Hero::updateSwordTexture()
+{
+	textureRight = "graphics/knight_right_sword.png";
+	textureLeft = "graphics/knight_left_sword.png";
+	textureFront = "graphics/knight_sword.png";
 }

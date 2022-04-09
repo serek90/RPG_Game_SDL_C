@@ -38,6 +38,7 @@ public:
 	uint8_t Collision(GameObject *object);
 	bool isShowing() { return _isShowing;  }
 	void stopShowing() { _isShowing = false; }
+	void updateTexture(const char* texturesheet);
 
 	void Update();
 	void Render();

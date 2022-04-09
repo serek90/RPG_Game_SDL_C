@@ -53,3 +53,4 @@ void GameOverScreen::handleEvent(SDL_Event event)
 		}
 	}
 }
+

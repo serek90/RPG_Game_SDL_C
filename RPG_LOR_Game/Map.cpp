@@ -53,9 +53,6 @@ void Map::LoadMap() //add array
 		}
 
 	}
-
-
-
 }
 
 void Map::Draw()

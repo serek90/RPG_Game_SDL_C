@@ -19,14 +19,18 @@ public:
 	bool fight();
 
 
-	int _defence = 5; //move to private
-	int _attack = 5; //move to private
+	int _defence = 5; //JSJS to do: move to private
+	int _attack = 5; //JSJS to do: move to private
 
 private:
 	std::vector<class Item> equipment;
 	int _color;
 	std::string _name;
 
-
+	const char* textureRight = "graphics/knight_right.png";
+	const char* textureLeft = "graphics/knight_left.png";
+	const char* textureFront = "graphics/knight.png";
+	void updateSwordTexture(); 
+	std::string currntTexture = "front";
 };
 

@@ -9,7 +9,7 @@
 int main(int argc, char** argv)
 {
 	const uint32_t FPS = 60;
-	const uint32_t frameDelay = 1000 / 60; // ms between each frames
+	const uint32_t frameDelay = 1000 / FPS; // ms between each frames
 
 	uint32_t frameStart;
 	uint32_t frameTime;
