@@ -20,6 +20,7 @@ public:
 private:
   int _name;
   Guard();
+  int _counter = 0;
 
 };
 

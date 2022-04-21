@@ -4,8 +4,8 @@
 MapScreen::MapScreen()
 {
 	_player = new Hero("graphics/knight.png", 192, 192, 8);
-	_enemy_1 = new Guard("graphics/guard.png", 0, 0, 0);
-	_enemy_2 = new Guard("graphics/guard.png", 0, 96, 0);
+	_enemy_1 = new Guard("graphics/guard_right.png", 0, 0, 0);
+	_enemy_2 = new Guard("graphics/guard_right.png", 0, 96, 0);
 	_sword = new Item("graphics/sword.png", 100, 296, "sword_1");
 	_map = new Map();
 

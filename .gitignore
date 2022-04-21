@@ -74,4 +74,5 @@ dkms.conf
 *.stamp
 *.depend
 *.user
-*/build/*
+*build/*
+*lib/*

@@ -11,21 +11,27 @@ Guard::~Guard()
 
 void Guard::Move()
 {
-	static int counter = 0, slow = 0;
+	static  int slow = 0;
 
 	if (slow++ == 10)
 	{
 
-		if (counter <= 300)
+		if (_counter < 300)
 			xIncrease();
-		else if (counter == 600)
-			counter = 0;
+		else if (_counter == 600)
+		{
+			_counter = 0;
+			this->updateTexture("graphics/guard_right.png");
+		}
+		else if (_counter == 300)
+		{
+			this->updateTexture("graphics/guard_left.png");
+		}
 		else
 			xDecrease();
 
-		counter++; 
+		_counter++; 
 		slow = 0;
-
 	}
 
 	Update();
