@@ -54,3 +54,7 @@ void GameOverScreen::handleEvent(SDL_Event event)
 	}
 }
 
+Screen* GameOverScreen::procedNext() { 
+	Screen* next = new MapScreen();
+	return next;
+}

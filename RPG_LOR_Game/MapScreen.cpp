@@ -69,3 +69,9 @@ void MapScreen::handleEvent(SDL_Event event)
 {
 	_player->Move(event);
 }
+
+Screen* MapScreen::procedNext()
+{
+	Screen* next = new GameOverScreen();
+	return next;
+}

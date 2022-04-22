@@ -6,6 +6,7 @@
 #include "Screen.h"
 #include "Game.h"
 #include "TextureManager.h"
+#include "MapScreen.h"
 
 class GameOverScreen :
 	public Screen
@@ -21,5 +22,6 @@ public:
 	int virtual update();
 	void virtual render();
 	virtual void handleEvent(SDL_Event event);
+	Screen* procedNext();
 };
 

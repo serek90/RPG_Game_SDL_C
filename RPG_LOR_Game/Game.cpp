@@ -16,7 +16,8 @@
 #include "GameOverScreen.h"
 
 
-Screen* actualScreen;
+Screen* actualScreen; // JSJS
+
 SDL_Renderer* Game::renderer = NULL; //nullptr
 
 
@@ -91,24 +92,15 @@ void Game::handleEvents()
 
 void Game::update()
 {
-	static int x = 0;
+	Screen* tmp; 
 
 	actualScreen->update();
 	if(!(actualScreen->isOn()))
 	{
-		if(x == 0) // JSJS TODO: rewrite to use next screen
-		{
-			delete(actualScreen);
-			actualScreen = new GameOverScreen();
-			x = 1;
-		}
-		else
-		{
-			delete(actualScreen);
-			actualScreen = new MapScreen();
-			x = 0;
-		}
 
+		tmp = actualScreen->procedNext();
+		delete(actualScreen);
+		actualScreen = tmp;
 	}
 }
 

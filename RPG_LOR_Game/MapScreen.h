@@ -4,6 +4,7 @@
 #include "Hero.h"
 #include "Guard.h"
 #include "Hero.h"
+#include "GameOverScreen.h"
 
 class MapScreen :
     public Screen
@@ -17,8 +18,9 @@ public:
     MapScreen();
     virtual ~MapScreen() { };
 
-    int virtual update();
-    void virtual render();
+    virtual int  update();
+    virtual void render();
     virtual void handleEvent(SDL_Event event);
+    Screen* procedNext();
 };
 
