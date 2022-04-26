@@ -15,7 +15,7 @@ public:
 	Hero(const char* textureSheet, int X, int Y, int color) : GameObject(textureSheet, X, Y), _color(color) {}
 	virtual ~Hero();
 	void takeItem(Item *item);
-	void printItems();
+	void printItems() const;
 	bool fight();
 
 

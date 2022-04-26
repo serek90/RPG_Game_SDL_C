@@ -97,7 +97,6 @@ void Game::update()
 	actualScreen->update();
 	if(!(actualScreen->isOn()))
 	{
-
 		tmp = actualScreen->procedNext();
 		delete(actualScreen);
 		actualScreen = tmp;

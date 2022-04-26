@@ -80,7 +80,7 @@ void Hero::takeItem(Item *item)
 	printItems();
 }
 
-void Hero::printItems()
+void Hero::printItems() const
 {
 	std::cout << "Hero has in his equipment:" << std::endl;
 	// Iterate over a vector using range based for loop

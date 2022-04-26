@@ -10,12 +10,15 @@ class GameObject
 protected:
 	int xpos;
 	int ypos;
-	int ySize = 64;
-	int xSize = 64;
+	static const int ySize = 64;
+	static const int xSize = 64;
 	bool _isShowing;
 
 	SDL_Texture* objTexture;
 	SDL_Rect srcRect, dstRect;
+
+	int _defence;
+	int _attack;
 
 public:
 	GameObject(const char* texturesheet, int x, int y) ;
