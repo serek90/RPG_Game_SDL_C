@@ -134,8 +134,8 @@ int GameObject::operator+(const GameObject& obj)
 {
 
 	std::cout << "Przeciezmy sobie ten operator" << std::endl;
-	this->_attack = 30; // this->_attack + obj._attack;
-	this->_defence = 40; // this->_defence + obj._defence;
+	this->_attack = this->_attack + obj._attack;
+	this->_defence  = this->_defence + obj._defence;
 
 	return 0;
 }

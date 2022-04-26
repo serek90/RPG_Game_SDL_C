@@ -19,7 +19,6 @@ int MapScreen::update()
 	{
 		if (_player->Collision(_enemy_1) || _player->Collision(_enemy_2))
 		{
-			/*if (_player->_attack > _enemy_1->_attack || _player->_attack > _enemy_2->_attack) */
 			if (*_player>*_enemy_1 ||*_player> *_enemy_2)
 			{
 				delete _enemy_1;

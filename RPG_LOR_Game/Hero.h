@@ -13,8 +13,8 @@ class Hero :
 public:
     void Move(SDL_Event event);
 	Hero(const char* textureSheet, int X, int Y, int color) : GameObject(textureSheet, X, Y), _color(color) {
-		_defence = 5; //JSJS to do: move to private
-		_attack = 5; //JSJS to do: move to private
+		_defence = 5;
+		_attack = 5;
 	}
 	virtual ~Hero();
 	void takeItem(Item *item);

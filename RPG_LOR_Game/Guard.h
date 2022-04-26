@@ -11,11 +11,11 @@ class Guard :
 {
 public:
     void Move();
-    Guard(const char* textureSheet, int X, int Y, int color) : GameObject(textureSheet, X, Y), _name(color) {}
+    Guard(const char* textureSheet, int X, int Y, int color) : GameObject(textureSheet, X, Y), _name(color) {
+        _defence = 10;
+        _attack = 10;
+    }
     virtual ~Guard();
-
-    int _defence = 10; //move to private
-    int _attack = 10;  //move to private
 
 private:
   int _name;

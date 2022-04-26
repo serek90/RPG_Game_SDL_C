@@ -17,8 +17,8 @@ private:
 public:
 	Item();
 	Item(const char* textureSheet, int X, int Y,  std::string name) : GameObject(textureSheet, X, Y), _name(name) {
-		_defence = 0; //move to privaet section
-		_attack = 20; //move to privaet section
+		_defence = 0;
+		_attack = 20;
 	}
 	virtual ~Item();
 	bool isOn();
