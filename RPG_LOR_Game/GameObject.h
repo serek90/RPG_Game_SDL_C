@@ -43,6 +43,8 @@ public:
 	void stopShowing() { _isShowing = false; }
 	void updateTexture(const char* texturesheet);
 
+	/*GameObject */ int operator+(const GameObject&);
+	int operator>(const GameObject&);
 	void Update();
 	void Render();
 };

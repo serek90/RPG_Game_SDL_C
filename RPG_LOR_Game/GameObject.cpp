@@ -128,3 +128,23 @@ void GameObject::updateTexture(const char* texturesheet)
 	SDL_DestroyTexture(objTexture);
 	objTexture = TextureManager::LoadTexture(texturesheet);
 }
+
+//GameObject 
+int GameObject::operator+(const GameObject& obj)
+{
+
+	std::cout << "Przeciezmy sobie ten operator" << std::endl;
+	this->_attack = 30; // this->_attack + obj._attack;
+	this->_defence = 40; // this->_defence + obj._defence;
+
+	return 0;
+}
+
+int GameObject::operator>(const GameObject& obj)
+{
+
+	std::cout << "Przeciezmy sobie > operator" << std::endl;
+	if (this->_attack > obj._attack) return 1;
+
+	return 0;
+}

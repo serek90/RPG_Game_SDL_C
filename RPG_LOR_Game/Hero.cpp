@@ -75,9 +75,15 @@ void Hero::takeItem(Item *item)
 	updateSwordTexture();
 
 	equipment.push_back(*item);
-	_defence += item->_defence;
-	_attack += item->_attack;
+	//_defence += item->_defence;
+	//_attack += item->_attack;
+
+	int i = *this + *item;
 	printItems();
+
+	std::cout << "\nHero stats:" << std::endl;
+	std::cout << "attack: " << this->_attack << std::endl;
+	std::cout << "defence: " << this->_defence << std::endl;
 }
 
 void Hero::printItems() const
