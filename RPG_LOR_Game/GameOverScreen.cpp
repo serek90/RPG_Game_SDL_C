@@ -4,6 +4,7 @@
 */
 
 #include "GameOverScreen.h"
+#include "MenuScreen.h"
 #include <iostream>
 
 GameOverScreen::GameOverScreen()
@@ -39,24 +40,11 @@ void GameOverScreen::render()
 void GameOverScreen::handleEvent(SDL_Event event)
 {
 	if (event.type == SDL_KEYDOWN)
-	{
-
-		switch (event.key.keysym.sym)
-		{
-		case SDLK_KP_ENTER:
 			this->off();
-			break;
-		case SDLK_a:
-			this->off();
-			break;
-		default:
-			break;
-		}
-	}
 }
 
 Screen* GameOverScreen::procedNext() 
 { 
-	Screen* next = new MapScreen();
+	Screen* next = new MenuScreen();
 	return next;
 }

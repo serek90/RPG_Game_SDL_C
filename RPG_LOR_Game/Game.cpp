@@ -69,7 +69,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		is_Running = false;
 	}
 
-	actualScreen = new MapScreen();
+	actualScreen = new MenuScreen();
 
 }
 
@@ -83,7 +83,6 @@ void Game::handleEvents()
 	case SDL_QUIT:
 		is_Running = false;
 		break;
-
 	default:
 			actualScreen->handleEvent(event);
 		break;

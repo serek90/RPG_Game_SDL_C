@@ -67,7 +67,16 @@ void MapScreen::render()
 
 void MapScreen::handleEvent(SDL_Event event)
 {
-	_player->Move(event);
+	if ((event.type == SDL_KEYDOWN) && (event.key.keysym.sym == SDLK_ESCAPE))
+	{
+		_isOn = false;
+		//JSJS to do: come back to menu screen
+	}
+	else
+	{
+		_player->Move(event);
+	}
+
 }
 
 Screen* MapScreen::procedNext()
