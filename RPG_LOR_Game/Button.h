@@ -10,6 +10,8 @@ class Button
 	unsigned int x_position;
 	unsigned int y_position;
 	SDL_Texture* texture;
+	SDL_Texture* texture_click;
+
 
 	Button();
 public:
