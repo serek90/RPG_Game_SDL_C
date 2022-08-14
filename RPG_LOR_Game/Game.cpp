@@ -20,8 +20,7 @@ Screen* actualScreen; // JSJS
 
 SDL_Renderer* Game::renderer = NULL; //nullptr
 
-
-Game::Game()
+Game::Game() : is_Running(false)
 {
 	std::cout << "Call constructor????!" << std::endl;
 }
@@ -33,6 +32,7 @@ Game::~Game()
 	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
 }
+
 
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
@@ -73,11 +73,8 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 }
 
-void Game::handleEvents()
+void Game::handleEvents(SDL_Event event)
 {
-	SDL_Event event;
-	SDL_PollEvent(&event);
-
 	switch (event.type)
 	{
 	case SDL_QUIT:

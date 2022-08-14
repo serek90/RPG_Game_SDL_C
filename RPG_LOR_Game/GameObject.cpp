@@ -41,19 +41,19 @@ void GameObject::Render()
 
 void GameObject::xDecrease()
 {
-	xpos--;
+	xpos-=2;
 }
 void GameObject::xIncrease()
 {
-	xpos++;
+	xpos+=2;
 }
 void GameObject::yDecrease()
 {
-	ypos--;
+	ypos-=2;
 }
 void GameObject::yIncrease()
 {
-	ypos++;
+	ypos+=2;
 }
 
 int GameObject::getX()

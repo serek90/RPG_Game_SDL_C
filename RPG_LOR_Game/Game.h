@@ -22,7 +22,7 @@ public:
 
 	void init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);
 
-	void handleEvents();
+	void handleEvents(SDL_Event event);
 	void update();
 	void render();
 

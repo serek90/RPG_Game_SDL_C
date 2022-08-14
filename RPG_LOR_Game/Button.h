@@ -12,7 +12,6 @@ class Button
 	SDL_Texture* texture;
 	SDL_Texture* texture_click;
 
-
 	Button();
 public:
 	Button(const char* textureSheet, int x, int y, int x_s, int y_s);
