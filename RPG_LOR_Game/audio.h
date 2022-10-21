@@ -13,10 +13,17 @@
 #include <mutex>
 #include <iostream>
 
-extern bool finishGame;
-extern std::mutex m;
-void audio_play();
-extern int i;
+class GameAudio
+{
+	std::string audio_path;
+	bool is_running;
+public:
+	GameAudio(const std::string path);
+	void stop() { is_running = false; }
+	void start() { is_running = true;  }
+	void load_new_music(const std::string path) {}
+
+};
 
 
 #endif /* AUDIO_H */

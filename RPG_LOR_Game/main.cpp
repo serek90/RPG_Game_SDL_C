@@ -20,14 +20,7 @@
 #include <SDL2/SDL_image.h>
 #endif
 
-
-int i = 0;
-bool finishGame = false;
-std::mutex m;
-
-
 SDL_Event event;
-
 
 int main(int argc, char** argv)
 {
@@ -38,15 +31,12 @@ int main(int argc, char** argv)
 	uint32_t frameTime;
 
 	Game* game = new Game;
+	GameAudio* audio = new GameAudio("resources / file_example_WAV_1MG.wav");
 
-	game->init("Knight's game", 100, 100, 1200, 800, false);
-
-
-	std::thread audio_thread(&audio_play);
+	game->init("Knight's game", 100, 100, 1200, 800, false); // move to the constructor
 
 	while (game->running())
 	{
-		i++;
 		frameStart = SDL_GetTicks();
 
 		SDL_PollEvent(&event);
@@ -62,8 +52,6 @@ int main(int argc, char** argv)
 		}
 	}
 
-	finishGame = true;
-	audio_thread.join();
 	delete game;
 
 	return 0;
