@@ -2,11 +2,12 @@
 #ifndef AUDIO_H
 #define AUDIO_H
 
-#include "SDL_audio.h"
 #if defined(_WIN32)
 #include <SDL.h>
+#include <SDL_audio.h>
 #else
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_audio.h>
 #endif
 #include <thread>
 #include <chrono>
