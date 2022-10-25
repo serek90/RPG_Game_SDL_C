@@ -30,8 +30,8 @@ int main(int argc, char** argv)
 	uint32_t frameStart;
 	uint32_t frameTime;
 	
-	auto game = make_unique<Game>();
-	auto audio = make_unique<GameAudio>("resources/file_example_WAV_1MG.wav");
+	auto game = std::make_unique<Game>();
+	auto audio = std::make_unique<GameAudio>("resources/file_example_WAV_1MG.wav");
 
 	game->init("Knight's game", 100, 100, 1200, 800, false); // move to the constructor
 
