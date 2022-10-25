@@ -24,14 +24,14 @@ SDL_Event event;
 
 int main(int argc, char** argv)
 {
-	const uint32_t FPS = 60;
-	const uint32_t frameDelay = 1000 / FPS; // ms between each frames
+	constexpr const uint32_t FPS = 60;
+	constexpr const uint32_t frameDelay = 1000 / FPS; // ms between each frames
 
 	uint32_t frameStart;
 	uint32_t frameTime;
-
-	Game* game = new Game;
-	GameAudio* audio = new GameAudio("resources / file_example_WAV_1MG.wav");
+	
+	auto game = make_unique<Game>();
+	auto audio = make_unique<GameAudio>("resources/file_example_WAV_1MG.wav");
 
 	game->init("Knight's game", 100, 100, 1200, 800, false); // move to the constructor
 
@@ -51,8 +51,6 @@ int main(int argc, char** argv)
 			SDL_Delay(frameDelay - frameTime);
 		}
 	}
-
-	delete game;
 
 	return 0;
 }
