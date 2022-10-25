@@ -4,7 +4,7 @@ CC = g++
 ifeq ($(OS),Windows_NT)
 LDLIBS=-I C:\SDL2-2.0.18\x86_64-w64-mingw32\include\SDL2\\ -L C:\SDL2-2.0.18\x86_64-w64-mingw32\lib\\ -lmingw32 -lSDL2main -lSDL2 -mwindows -I  C:\SDL2_image-2.0.5\x86_64-w64-mingw32\include\SDL2\\ -L C:\SDL2_image-2.0.5\x86_64-w64-mingw32\lib\\ -lSDL2_image
 else 
-LDLIBS= -lSDL2main -lSDL2 -lSDL2_image
+LDLIBS= -lSDL2main -lSDL2 -lSDL2_image -pthread
 endif
 
 OBJFILES =   audio.o Screen.o MapScreen.o GameOverScreen.o MenuScreen.o Guard.o Hero.o Map.o Item.o TextureManager.o GameObject.o Game.o main.o
