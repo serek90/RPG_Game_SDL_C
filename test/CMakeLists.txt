@@ -1,5 +1,6 @@
 set(BINARY ${CMAKE_PROJECT_NAME}_tst)
 
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 link_directories( "C:/SDL2_image-2.0.1/lib/x64" "C:/SDL2/lib/x64")
 include_directories("C:/SDL2/include" "C:/SDL2_image-2.0.1/include")
 #link_directories( "packages/gtest.1.7.0/build/native/lib/Release")
