@@ -17,7 +17,9 @@ jobs:
           run: sudo apt-get update
         - name: Configure Environment
           run: sudo apt install libsdl2-dev && sudo apt install libsdl2-image-dev && sudo apt install cmake
-        
+     
+        - name: Install gtests
+          run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake CMakeLists.txt && sudo make && sudo cp *.a /usr/lib && cd -
         - name: Cmake prepare
           run: cmake CMakeLists.txt
         - name: Make
