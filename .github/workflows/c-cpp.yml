@@ -16,16 +16,9 @@ jobs:
         - name: Update Environment
           run: sudo apt-get update
         - name: Configure Environment
-          run: sudo apt install libsdl2-dev && sudo apt install libsdl2-image-dev
-        - name: Make
-          run: make -C "RPG_LOR_Game"
-          
-    tests:
-        runs-on: ubuntu-latest
+          run: sudo apt install libsdl2-dev && sudo apt install libsdl2-image-dev && apt install cmake
         
-        steps:
-        - uses: actions/checkout@v2
-        
+        - name: Cmake prepare
+          run: cmake CMakeList.txt
         - name: Make
-        - run: make -C "RPG_LOR_Game"
-    
+          run: make
