@@ -1,4 +1,4 @@
-name: CMake
+name: build-test
 
 on:
   push:
@@ -7,15 +7,19 @@ on:
     branches: [ main ]
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-
-        steps:
-        - uses: actions/checkout@v2
-        
-        - name: Update Environment
-          run: sudo apt-get update
-        - name: Configure Environment
-          run: sudo apt install libsdl2-dev && sudo apt install libsdl2-image-dev
-        - name: Make
-          run: make -C "RPG_LOR_Game"
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Install gtest manually
+      run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake CMakeLists.txt && sudo make && sudo cp lib/*.a /usr/lib && sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
+    - uses: actions/checkout@v1
+    - name: Update Environment
+      run: sudo apt-get update
+    - name: Configure Environment
+      run: sudo apt install libsdl2-dev && sudo apt install libsdl2-image-dev && sudo apt install cmake
+    - name: Cmake prepare
+      run: cmake CMakeLists.txt
+    - name: Make
+      run: make
+    - name: run-tests
+      run: ./test/RPG_Game_SDL_C_tst
