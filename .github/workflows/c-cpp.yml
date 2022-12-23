@@ -16,7 +16,7 @@ jobs:
     - name: Update Environment
       run: sudo apt-get update
     - name: Configure Environment
-      run: sudo apt install libsdl2-dev && sudo apt install libsdl2-image-dev && sudo apt install cmak
+      run: sudo apt install libsdl2-dev && sudo apt install libsdl2-image-dev && sudo apt install cmake
     - name: Cmake prepare
       run: cmake CMakeLists.txt
     - name: Make
