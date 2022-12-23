@@ -24,6 +24,7 @@ jobs:
         runs-on: ubuntu-latest
         
         steps:
+        - uses: actions/checkout@v2
         
         - name: Make
         - run: make -C "RPG_LOR_Game"
