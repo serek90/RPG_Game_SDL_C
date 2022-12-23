@@ -21,3 +21,5 @@ jobs:
       run: cmake CMakeLists.txt
     - name: Make
       run: make
+    - name: run-tests
+      run: ./test/RPG_Game_SDL_C_tst
