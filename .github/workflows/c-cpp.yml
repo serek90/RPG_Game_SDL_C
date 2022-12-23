@@ -19,7 +19,7 @@ jobs:
           run: sudo apt install libsdl2-dev && sudo apt install libsdl2-image-dev && sudo apt install cmake
      
         - name: Install gtests
-          run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake CMakeLists.txt && sudo make && sudo cp *.a /usr/lib && cd -
+          run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake CMakeLists.txt && sudo make && ls && cd -
         - name: Cmake prepare
           run: cmake CMakeLists.txt
         - name: Make
