@@ -19,6 +19,6 @@ jobs:
           run: sudo apt install libsdl2-dev && sudo apt install libsdl2-image-dev && sudo apt install cmake
         
         - name: Cmake prepare
-          run: cmake CMakeList.txt
+          run: cmake CMakeLists.txt
         - name: Make
           run: make
