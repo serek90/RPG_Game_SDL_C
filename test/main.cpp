@@ -41,7 +41,7 @@ TEST(MapScreenInit, init)
 TEST(GameOverscreenInit, init)
 {
 	GameOverScreen screen;
-	EXPECT_EQ(1, screen.isOn());
+	EXPECT_EQ(0, screen.isOn());
 }
 
 TEST(MenuScreenInit, init)
