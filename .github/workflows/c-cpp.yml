@@ -1,10 +1,10 @@
-name: my-workflow-name
+name: build-test
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
