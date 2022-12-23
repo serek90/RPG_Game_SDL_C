@@ -19,3 +19,12 @@ jobs:
           run: sudo apt install libsdl2-dev && sudo apt install libsdl2-image-dev
         - name: Make
           run: make -C "RPG_LOR_Game"
+          
+    tests:
+        runs-on: ubuntu-latest
+        
+        steps:
+        
+        - name: Make
+        - run: make -C "RPG_LOR_Game"
+    
