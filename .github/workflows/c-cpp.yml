@@ -24,4 +24,4 @@ jobs:
     - name: run-tests
       run: ./test/RPG_Game_SDL_C_tst
     - name: Run program 
-      run: ./../test/starting_test.sh
+      run: ./test/starting_test.sh
