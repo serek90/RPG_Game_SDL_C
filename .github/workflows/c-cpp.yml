@@ -32,4 +32,5 @@ jobs:
       shell: pwsh
       run: cmake CMakeLists.txt
     - name: build
+      shell: pwsh
       run: make
