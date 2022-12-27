@@ -28,4 +28,5 @@ jobs:
     runs-on: windows-latest
     steps:
         - name: Install gtest manually
-          run: cmake CMakeLists.txt
+          shell: pwsh
+          run: ls
