@@ -23,3 +23,9 @@ jobs:
       run: make
     - name: run-tests
       run: ./test/RPG_Game_SDL_C_tst
+  
+  windows-build:
+    runs-on: Windows
+    steps:
+        - name: Install gtest manually
+          run: cmake CMakeLists.txt
