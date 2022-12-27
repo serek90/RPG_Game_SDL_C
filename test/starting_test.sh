@@ -1,6 +1,7 @@
 #!/bin/bash
 
-SERVICE="RPG_LOR_Game/RPG_Game_SDL_C_run"
+cd RPG_LOR_Game
+SERVICE="RPG_Game_SDL_C_run"
 ./$SERVICE &
 
 sleep 20
