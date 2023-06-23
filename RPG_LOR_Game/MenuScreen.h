@@ -7,11 +7,10 @@ class MenuScreen :
     public Screen
 {
     SDL_Texture* _texture;
-    SDL_Texture* _button_1;
-    SDL_Texture* _button_2;
-    SDL_Texture* _button_3;
-    SDL_Texture* _button_4;
+
+
     SDL_Rect  src, _dst;
+    Button* button;
 
 public:
     MenuScreen();
