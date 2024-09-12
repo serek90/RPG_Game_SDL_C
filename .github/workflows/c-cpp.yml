@@ -23,3 +23,5 @@ jobs:
       run: make
     - name: run-tests
       run: ./test/RPG_Game_SDL_C_tst
+    - name: Run program 
+      run: chmod 777 test/starting_test.sh && ./test/starting_test.sh
